@@ -23,7 +23,15 @@ if (!process.env.MNEMONIC) {
 }
 
 const config: HardhatUserConfig = {
-  solidity: "0.6.12",
+  solidity: {
+    version: "0.6.12",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 2000,
+      },
+    },
+  },
   networks: {
     metis: {
       url: "https://stardust.metis.io/?owner=588",
