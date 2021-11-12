@@ -16,6 +16,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const deployed = await deploy("MasterChef", {
     from: deployer,
     args: [GiveToken.address, 0, devAddress, feeAddress, vaultAddress],
+    log: true,
   });
 
   // transfer GiveToken owership to MasterChef
